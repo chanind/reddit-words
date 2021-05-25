@@ -1,0 +1,9 @@
+{
+  "python.analysis.extraPaths": ["./server"],
+  "editor.formatOnSave": true,
+  "[python]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4
+  },
+  "python.formatting.provider": "black"
+}
