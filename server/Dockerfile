@@ -32,4 +32,4 @@ RUN python scripts/prune_sense_vectors.py --spacy-sense2vec-path /data/s2v_reddi
 # -- build final image --
 FROM base as release
 COPY --from=precalculator /app/data /app/data
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
+CMD ["./run.sh"]
