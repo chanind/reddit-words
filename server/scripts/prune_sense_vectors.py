@@ -1,5 +1,6 @@
 import argparse
 from os import path
+import re
 import shutil
 from sense2vec import Sense2Vec
 
@@ -18,10 +19,15 @@ OUTPUT_PATH = path.join(path.dirname(__file__), "../data")
 
 def create_pruned_s2v(raw_s2v):
     keys_to_add = []
+    bad_content_re = re.compile(r"/.*/|[|^\[\]λ]")
     for key in raw_s2v.keys():
         word, sense = raw_s2v.split_key(key)
         freq = raw_s2v.get_freq(key)
-        if sense == "AUX" or sense == "PUNCT" or freq < 1000:
+        if (
+            sense in ["AUX", "PUNCT", "NUM", "LAW"]
+            or freq < 2000
+            or bad_content_re.search(word)
+        ):
             continue
         keys_to_add.append(key)
 
