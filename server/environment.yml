@@ -8,6 +8,7 @@ dependencies:
   - pip:
     - black==21.5b1
     - flask==2.0.1
+    - flask-cors==3.0.10
     - gunicorn==20.1.0
     - sense2vec==2.0.0
     - spacy==3.0.6
