@@ -41,12 +41,6 @@ const IntroPage = () => {
         <div className="p-3">
           <SenseDiffLink leftSense="happy|ADJ" rightSense="unhappy|ADJ" />
         </div>
-        <div className="p-3">
-          <SenseDiffLink
-            leftSense="homosexual|ADJ"
-            rightSense="heterosexual|ADJ"
-          />
-        </div>
       </div>
     </div>
   );
