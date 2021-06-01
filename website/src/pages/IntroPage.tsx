@@ -13,22 +13,40 @@ const IntroPage = () => {
         word vectors learn about the world from Reddit in 2019? Click on a
         dimension below to find out!
       </p>
-      <div className="flex flex-wrap justify-center pt-10 gap-3">
-        <SenseDiffLink
-          leftSense="Communism|NOUN"
-          rightSense="Capitalism|NOUN"
-        />
-        <SenseDiffLink leftSense="east|NOUN" rightSense="west|NOUN" />
-        <SenseDiffLink leftSense="north|NOUN" rightSense="south|NOUN" />
-        <SenseDiffLink leftSense="USA|GPE" rightSense="France|GPE" />
-        <SenseDiffLink leftSense="USA|GPE" rightSense="China|GPE" />
-        <SenseDiffLink leftSense="smart|ADJ" rightSense="stupid|ADJ" />
-        <SenseDiffLink leftSense="Tokyo|GPE" rightSense="New_York|GPE" />
-        <SenseDiffLink leftSense="happy|ADJ" rightSense="unhappy|ADJ" />
-        <SenseDiffLink
-          leftSense="homosexual|ADJ"
-          rightSense="heterosexual|ADJ"
-        />
+      <div className="flex flex-wrap justify-center pt-10">
+        <div className="p-3">
+          <SenseDiffLink
+            leftSense="Communism|NOUN"
+            rightSense="Capitalism|NOUN"
+          />
+        </div>
+        <div className="p-3">
+          <SenseDiffLink leftSense="east|NOUN" rightSense="west|NOUN" />
+        </div>
+        <div className="p-3">
+          <SenseDiffLink leftSense="north|NOUN" rightSense="south|NOUN" />
+        </div>
+        <div className="p-3">
+          <SenseDiffLink leftSense="USA|GPE" rightSense="France|GPE" />
+        </div>
+        <div className="p-3">
+          <SenseDiffLink leftSense="USA|GPE" rightSense="China|GPE" />
+        </div>
+        <div className="p-3">
+          <SenseDiffLink leftSense="smart|ADJ" rightSense="stupid|ADJ" />
+        </div>
+        <div className="p-3">
+          <SenseDiffLink leftSense="Tokyo|GPE" rightSense="New_York|GPE" />
+        </div>
+        <div className="p-3">
+          <SenseDiffLink leftSense="happy|ADJ" rightSense="unhappy|ADJ" />
+        </div>
+        <div className="p-3">
+          <SenseDiffLink
+            leftSense="homosexual|ADJ"
+            rightSense="heterosexual|ADJ"
+          />
+        </div>
       </div>
     </div>
   );
