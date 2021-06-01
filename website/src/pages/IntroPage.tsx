@@ -42,6 +42,9 @@ const IntroPage = () => {
           <SenseDiffLink leftSense="happy|ADJ" rightSense="unhappy|ADJ" />
         </div>
         <div className="p-2">
+          <SenseDiffLink leftSense="Trump|PERSON" rightSense="Obama|PERSON" />
+        </div>
+        <div className="p-2">
           <SenseDiffLink
             leftSense="North_Korea|GPE"
             rightSense="South_Korea|GPE"
