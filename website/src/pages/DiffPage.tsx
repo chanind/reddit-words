@@ -25,6 +25,9 @@ const DiffPage = () => {
   return (
     <div>
       <div className="p-10">
+        <Link to="/" className="float-left">
+          ← back
+        </Link>
         <Link to="/" className="text-2xl">
           Reddit Words
         </Link>
@@ -35,14 +38,14 @@ const DiffPage = () => {
           <div className="text-4xl flex justify-center gap-1">
             <div>
               <span className="pr-2">{splitWordAndPos(left).word}</span>
-              <span className="text-gray-500 text-xl">
+              <span className="text-gray-500 text-xl hidden md:inline">
                 {splitWordAndPos(left).pos}
               </span>
             </div>
             <div className="px-2">&minus;</div>
             <div>
               <span className="pr-2">{splitWordAndPos(right).word}</span>
-              <span className="text-gray-500 text-xl">
+              <span className="text-gray-500 text-xl hidden md:inline">
                 {splitWordAndPos(right).pos}
               </span>
             </div>
@@ -57,13 +60,13 @@ const DiffPage = () => {
             <div className="grid grid-cols-2">
               <div>
                 <h1 className="py-5 text-xl">
-                  Extreme {splitWordAndPos(left).word} direction words
+                  Most <b>{splitWordAndPos(left).word}</b> words
                 </h1>
                 <div>
                   {data.topLeftSenses.map(([sense]) => (
                     <div className="text-gray-300 pb-1">
                       {splitWordAndPos(sense).word}
-                      <span className="text-gray-400 pl-1 text-sm">
+                      <span className="text-gray-400 pl-1 text-sm hidden md:inline">
                         {splitWordAndPos(sense).pos}
                       </span>
                     </div>
@@ -72,13 +75,13 @@ const DiffPage = () => {
               </div>
               <div>
                 <h1 className="py-5 text-xl">
-                  Extreme {splitWordAndPos(right).word} direction words
+                  Most <b>{splitWordAndPos(right).word}</b> words
                 </h1>
                 <div>
                   {data.topRightSenses.map(([sense]) => (
                     <div className="text-gray-300 pb-1">
                       {splitWordAndPos(sense).word}
-                      <span className="text-gray-400 pl-1 text-sm">
+                      <span className="text-gray-400 pl-1 text-sm hidden md:inline">
                         {splitWordAndPos(sense).pos}
                       </span>
                     </div>

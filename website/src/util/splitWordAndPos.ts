@@ -1,5 +1,6 @@
 const splitWordAndPos = (sense: string) => {
-  const [word, pos] = sense.split("|");
+  const [rawWord, pos] = sense.split("|");
+  const word = rawWord.replace(/_/gi, " ").replace("&amp;", "&");
   return { word, pos };
 };
 
