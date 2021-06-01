@@ -57,7 +57,7 @@ const DiffPage = () => {
           )}
           {isLoading && <div className="animate-spin text-4xl">◑</div>}
           {data && (
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 max-w-screen-lg mx-auto">
               <div>
                 <h1 className="py-5 text-xl">
                   Most <b>{splitWordAndPos(left).word}</b> words

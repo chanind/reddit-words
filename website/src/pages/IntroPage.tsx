@@ -8,7 +8,7 @@ const IntroPage = () => {
       <p>
         What did{" "}
         <a href="https://github.com/explosion/sense2vec" className="underline">
-          Spacy's sense2vec
+          Spacy's offical sense2vec
         </a>{" "}
         word vectors learn about the world from Reddit in 2019? Click on a
         dimension below to find out!
@@ -18,7 +18,6 @@ const IntroPage = () => {
           leftSense="Communism|NOUN"
           rightSense="Capitalism|NOUN"
         />
-        <SenseDiffLink leftSense="tall|ADJ" rightSense="short|ADJ" />
         <SenseDiffLink leftSense="east|NOUN" rightSense="west|NOUN" />
         <SenseDiffLink leftSense="north|NOUN" rightSense="south|NOUN" />
         <SenseDiffLink leftSense="USA|GPE" rightSense="France|GPE" />
