@@ -25,8 +25,8 @@ const DiffPage = () => {
 
   return (
     <div>
-      <div className="p-10">
-        <Link to="/" className="DiffPage-backLink float-left">
+      <div className="my-5 mx-3 md:mx-10 md:mb-10 relative">
+        <Link to="/" className="DiffPage-backLink left-0 absolute top-0">
           <span className="DiffPage-backLinkArrow">←</span> back
         </Link>
         <Link to="/" className="text-2xl">
@@ -61,7 +61,8 @@ const DiffPage = () => {
             <div className="grid grid-cols-2 max-w-screen-lg mx-auto">
               <div>
                 <h1 className="py-5 text-xl">
-                  ← towards <b>{splitWordAndPos(left).word}</b>
+                  ← <span className="hidden md:inline">towards</span>{" "}
+                  <b>{splitWordAndPos(left).word}</b>
                 </h1>
                 <div>
                   {data.topLeftSenses.map(([sense]) => (
@@ -76,7 +77,8 @@ const DiffPage = () => {
               </div>
               <div>
                 <h1 className="py-5 text-xl">
-                  towards <b>{splitWordAndPos(right).word}</b> →
+                  <span className="hidden md:inline">towards</span>{" "}
+                  <b>{splitWordAndPos(right).word}</b> →
                 </h1>
                 <div>
                   {data.topRightSenses.map(([sense]) => (
