@@ -1,0 +1,8 @@
+.DiffPage-backLinkArrow {
+  transition: all 250ms;
+  position: relative;
+  right: 0;
+}
+.DiffPage-backLink:hover .DiffPage-backLinkArrow {
+  right: 4px;
+}

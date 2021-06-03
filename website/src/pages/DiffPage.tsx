@@ -4,6 +4,7 @@ import splitWordAndPos from "../util/splitWordAndPos";
 import useQueryParams from "../util/useQueryParams";
 import { API_HOST } from "../config";
 import { useQuery } from "react-query";
+import "./DiffPage.css";
 
 const DiffPage = () => {
   const query = useQueryParams();
@@ -25,8 +26,8 @@ const DiffPage = () => {
   return (
     <div>
       <div className="p-10">
-        <Link to="/" className="float-left">
-          ← back
+        <Link to="/" className="DiffPage-backLink float-left">
+          <span className="DiffPage-backLinkArrow">←</span> back
         </Link>
         <Link to="/" className="text-2xl">
           Reddit Words
