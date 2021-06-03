@@ -18,12 +18,12 @@ const SenseDiffLink: FC<SenseDiffLinkProps> = ({ leftSense, rightSense }) => {
     >
       <div>
         <span className="inline-block pr-1">{leftData.word}</span>
-        <span className="text-gray-500 text-xs">{leftData.pos}</span>
+        <span className="text-gray-400 text-xs">{leftData.pos}</span>
       </div>
       <div className="px-2"> &minus; </div>
       <div>
         <span className="inline-block pr-1">{rightData.word}</span>
-        <span className="text-gray-500 text-xs">{rightData.pos}</span>
+        <span className="text-gray-400 text-xs">{rightData.pos}</span>
       </div>
     </Link>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import SenseDiffLink from "../components/SenseDiffLink";
+import Faq from "../components/Faq";
 
 const IntroPage = () => {
   return (
@@ -13,7 +14,7 @@ const IntroPage = () => {
         word vectors learn about the world from Reddit in 2019? Click on a
         dimension below to find out!
       </p>
-      <div className="flex flex-wrap justify-center pt-10">
+      <div className="flex flex-wrap justify-center pt-10 max-w-screen-lg mx-auto ">
         <div className="p-2">
           <SenseDiffLink
             leftSense="Communism|NOUN"
@@ -50,6 +51,9 @@ const IntroPage = () => {
             rightSense="South_Korea|GPE"
           />
         </div>
+      </div>
+      <div className="pt-10 max-w-screen-lg mx-auto ">
+        <Faq />
       </div>
     </div>
   );

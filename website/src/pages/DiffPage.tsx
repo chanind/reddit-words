@@ -38,14 +38,14 @@ const DiffPage = () => {
           <div className="text-4xl flex justify-center gap-1">
             <div>
               <span className="pr-2">{splitWordAndPos(left).word}</span>
-              <span className="text-gray-500 text-xl hidden md:inline">
+              <span className="text-gray-400 text-xl hidden md:inline">
                 {splitWordAndPos(left).pos}
               </span>
             </div>
             <div className="px-2">&minus;</div>
             <div>
               <span className="pr-2">{splitWordAndPos(right).word}</span>
-              <span className="text-gray-500 text-xl hidden md:inline">
+              <span className="text-gray-400 text-xl hidden md:inline">
                 {splitWordAndPos(right).pos}
               </span>
             </div>
@@ -60,7 +60,7 @@ const DiffPage = () => {
             <div className="grid grid-cols-2 max-w-screen-lg mx-auto">
               <div>
                 <h1 className="py-5 text-xl">
-                  Most <b>{splitWordAndPos(left).word}</b> words
+                  ← towards <b>{splitWordAndPos(left).word}</b>
                 </h1>
                 <div>
                   {data.topLeftSenses.map(([sense]) => (
@@ -75,7 +75,7 @@ const DiffPage = () => {
               </div>
               <div>
                 <h1 className="py-5 text-xl">
-                  Most <b>{splitWordAndPos(right).word}</b> words
+                  towards <b>{splitWordAndPos(right).word}</b> →
                 </h1>
                 <div>
                   {data.topRightSenses.map(([sense]) => (
