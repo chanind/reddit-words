@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "https://chanind.github.io/reddit-words/static/css/main.51df9cec.chunk.css",
-    "main.js": "https://chanind.github.io/reddit-words/static/js/main.161dab6d.chunk.js",
-    "main.js.map": "https://chanind.github.io/reddit-words/static/js/main.161dab6d.chunk.js.map",
+    "main.css": "https://chanind.github.io/reddit-words/static/css/main.11318e3f.chunk.css",
+    "main.js": "https://chanind.github.io/reddit-words/static/js/main.bf041058.chunk.js",
+    "main.js.map": "https://chanind.github.io/reddit-words/static/js/main.bf041058.chunk.js.map",
     "runtime-main.js": "https://chanind.github.io/reddit-words/static/js/runtime-main.f6bdd40b.js",
     "runtime-main.js.map": "https://chanind.github.io/reddit-words/static/js/runtime-main.f6bdd40b.js.map",
     "static/js/2.03ef991b.chunk.js": "https://chanind.github.io/reddit-words/static/js/2.03ef991b.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.7a9f2d77.chunk.js": "https://chanind.github.io/reddit-words/static/js/3.7a9f2d77.chunk.js",
     "static/js/3.7a9f2d77.chunk.js.map": "https://chanind.github.io/reddit-words/static/js/3.7a9f2d77.chunk.js.map",
     "index.html": "https://chanind.github.io/reddit-words/index.html",
-    "static/css/main.51df9cec.chunk.css.map": "https://chanind.github.io/reddit-words/static/css/main.51df9cec.chunk.css.map",
+    "static/css/main.11318e3f.chunk.css.map": "https://chanind.github.io/reddit-words/static/css/main.11318e3f.chunk.css.map",
     "static/js/2.03ef991b.chunk.js.LICENSE.txt": "https://chanind.github.io/reddit-words/static/js/2.03ef991b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f6bdd40b.js",
     "static/js/2.03ef991b.chunk.js",
-    "static/css/main.51df9cec.chunk.css",
-    "static/js/main.161dab6d.chunk.js"
+    "static/css/main.11318e3f.chunk.css",
+    "static/js/main.bf041058.chunk.js"
   ]
 }
