@@ -25,7 +25,7 @@ def create_pruned_s2v(raw_s2v):
         freq = raw_s2v.get_freq(key)
         if (
             sense in ["AUX", "PUNCT", "NUM", "LAW", "X", "MONEY"]
-            or freq < 1000
+            or freq < 2000
             or bad_content_re.search(word)
             or len(word) > 50
         ):
