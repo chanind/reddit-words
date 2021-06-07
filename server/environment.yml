@@ -13,3 +13,5 @@ dependencies:
     - sense2vec==2.0.0
     - spacy==3.0.6
     - pytest==6.2.4
+    - fast-autocomplete==0.7.1
+    - python-Levenshtein==0.12.2

@@ -1,17 +1,46 @@
 from flask import Blueprint, request, jsonify
 from os import path
 from sense2vec import Sense2Vec
+from lib.AutocompleteIndex import AutocompleteIndex
 from lib.VectorSearchIndex import VectorSearchIndex
 
 api = Blueprint("api", __name__)
 
 s2v = Sense2Vec().from_disk(path.join(path.dirname(__file__), "../data"))
 search_index = VectorSearchIndex(s2v)
+autocomplete_index = AutocompleteIndex(s2v)
 
 
 @api.get("/")
 def index():
     return "OK", 200
+
+
+@api.get("/autocomplete")
+def autocomplete():
+    query = request.args.get("query")
+    if query is None:
+        return "Must provide a query", 400
+    results = autocomplete_index.search(query)
+    enhanced_results = []
+    for result in results:
+        best_sense = s2v.get_best_sense(result, ignore_case=False)
+        other_senses = s2v.get_other_senses(best_sense, ignore_case=False)
+        senses = [best_sense] + other_senses
+        pos_with_freqs = [
+            {"pos": s2v.split_key(sense)[1], "freq": s2v.get_freq(sense)}
+            for sense in senses
+        ]
+        enhanced_results.append(
+            {
+                "term": result,
+                "senses": sorted(
+                    pos_with_freqs, key=lambda obj: obj["freq"], reverse=True
+                ),
+                "freq": s2v.get_freq(best_sense),
+            }
+        )
+    return jsonify(enhanced_results)
 
 
 @api.get("/bias-rank")
