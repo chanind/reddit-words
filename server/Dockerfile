@@ -15,6 +15,7 @@ RUN \
 # -- install python deps --
 # based on https://pythonspeed.com/articles/activate-conda-dockerfile/
 FROM continuumio/miniconda3 as base
+RUN apt-get update && apt-get install -y build-essential
 COPY environment.yml .
 RUN conda env create -f environment.yml
 # Make RUN commands use the new environment:
