@@ -5,12 +5,13 @@ import useQueryParams from "../util/useQueryParams";
 import { API_HOST } from "../config";
 import { useQuery } from "react-query";
 import "./DiffPage.css";
+import { ClapSpinner } from "react-spinners-kit";
 
 const DiffPage = () => {
   const query = useQueryParams();
   const left = query.get("left");
   const right = query.get("right");
-  const { isLoading, error, data } = useQuery<biasQueryResults>(
+  const { isLoading, error, data } = useQuery<BiasQueryResults>(
     `${left}-${right}`,
     () =>
       fetch(`${API_HOST}/bias-rank?leftSense=${left}&rightSense=${right}`).then(
@@ -18,7 +19,7 @@ const DiffPage = () => {
       )
   );
 
-  interface biasQueryResults {
+  interface BiasQueryResults {
     topLeftSenses: [string, number][];
     topRightSenses: [string, number][];
   }
@@ -56,7 +57,11 @@ const DiffPage = () => {
               ⚠ {(error as any).message}
             </div>
           )}
-          {isLoading && <div className="animate-spin text-4xl">◑</div>}
+          {isLoading && (
+            <div className="flex justify-center mt-10">
+              <ClapSpinner frontColor="#3B82F6" />
+            </div>
+          )}
           {data && (
             <div className="grid grid-cols-2 max-w-screen-lg mx-auto">
               <div>
