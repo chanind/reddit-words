@@ -33,7 +33,35 @@ const Faq: FC = () => (
         >
           Spacy's official pretrained sense2vec sense vectors
         </a>{" "}
-        trained on a dump of Reddit from 2019.
+        trained on a dump of Reddit from 2019.{" "}
+        <a className="underline" href="https://spacy.io/">
+          Spacy
+        </a>{" "}
+        is one of the most popular NLP frameworks for Python.
+      </FaqItem>
+    </div>
+    <div className="my-10">
+      <FaqItem title="What are sense vectors, and what are they used for?">
+        Sense vectors, or{" "}
+        <a
+          className="underline"
+          href="https://en.wikipedia.org/wiki/Word_embedding"
+          target="_blank"
+          rel="noreferrer"
+        >
+          word vectors
+        </a>
+        , are a technique used to create numerical vectors from words. Sense
+        vectors are just word vectors that also take into account part of speech
+        of the word as well. These vectors capture features of words
+        mathematically, so it's possible to use these pre-trained word vectors
+        as an input to other AI models and have those models gain the insight
+        that these vectors have already learned. However, these word vectors
+        also learn the inherit biases and idiosyncracies of the data they were
+        trained on, so it's important to be careful when using word vectors that
+        you're not accidentally importing a lot of biases into your model. If
+        you're using word vectors trained on Reddit data, for example, your
+        model is going to have learned some pretty strange stuff!
       </FaqItem>
     </div>
     <div className="my-10">
