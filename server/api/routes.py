@@ -55,6 +55,7 @@ def bias_rank():
         return "Must provide a query param: leftSense", 400
     if right_sense is None:
         return "Must provide a query param: rightSense", 400
+    print(f"bias: {left_sense} - {right_sense}")
     left_sense_vec = s2v[left_sense]
     right_sense_vec = s2v[right_sense]
     if left_sense_vec is None:

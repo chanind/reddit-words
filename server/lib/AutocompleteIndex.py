@@ -30,7 +30,6 @@ class AutocompleteIndex:
             best_sense = self.s2v.get_best_sense(base_word.lower())
             if not best_sense:
                 best_sense = self.s2v.get_best_sense(base_word)
-            print(base_word, best_sense)
             all_words.add(self.s2v.split_key(best_sense)[0])
             for other_sense in self.s2v.get_other_senses(best_sense.lower()):
                 all_words.add(self.s2v.split_key(other_sense)[0])
