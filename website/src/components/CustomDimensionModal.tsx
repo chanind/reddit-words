@@ -8,6 +8,9 @@ interface CustomDimensionModalProps {
   onClose: () => void;
 }
 
+const encodeSense = (sense: string) =>
+  encodeURIComponent(sense.replace(/\s+/gi, "_"));
+
 const CustomDimensionModal: FC<CustomDimensionModalProps> = ({
   isOpen,
   onClose,
@@ -22,7 +25,10 @@ const CustomDimensionModal: FC<CustomDimensionModalProps> = ({
     }
   }, [isOpen]);
 
-  const destination = `/diff?left=${leftSense}&right=${rightSense}`;
+  const destination =
+    leftSense && rightSense
+      ? `/diff?left=${encodeSense(leftSense)}&right=${encodeSense(rightSense)}`
+      : "";
   return (
     <Modal title="Create your Own Dimension" isOpen={isOpen} onClose={onClose}>
       <p className="text-gray-400">
