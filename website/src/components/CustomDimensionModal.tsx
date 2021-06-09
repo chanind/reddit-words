@@ -28,9 +28,8 @@ const CustomDimensionModal: FC<CustomDimensionModalProps> = ({
       <p className="text-gray-400">
         Choose 2 words to subtract to create an analysis dimension.{" "}
         <span className="hidden md:inline">
-          It's best if these words are very similar in all ways except one, like
-          "happiness" vs "unhappiness". The results will be other words whose
-          difference is like the difference between the words you select here.
+          The results will be other words whose difference is like the
+          difference between the words you select here.
         </span>
       </p>
       <div className="flex flex-wrap md:flex-nowrap mt-6 justify-between items-center">
