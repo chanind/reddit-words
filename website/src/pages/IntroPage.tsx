@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import SenseDiffLink from "../components/SenseDiffLink";
 import Faq from "../components/Faq";
 import "./IntroPage.css";
-import Modal from "../components/Modal";
-import SenseAutosuggest from "../components/SenseAutosuggest";
+import CustomDimensionModal from "../components/CustomDimensionModal";
 
 const IntroPage = () => {
-  const [isCreateOwnOpen, setIsCreateOwnOpen] = useState(false);
+  const [isCustomDimensionModalOpen, setIsCustomDimensionModalOpen] =
+    useState(false);
   return (
     <>
       <div className="p-2">
@@ -65,7 +65,7 @@ const IntroPage = () => {
         </div>
         <div>
           <button
-            onClick={() => setIsCreateOwnOpen(true)}
+            onClick={() => setIsCustomDimensionModalOpen(true)}
             className="p-3 px-10 rounded border border-blue-300 bg-opacity-5 bg-gray-400 hover:bg-opacity-10 text-blue-300"
           >
             Create your Own Dimension
@@ -75,30 +75,10 @@ const IntroPage = () => {
           <Faq />
         </div>
       </div>
-
-      <Modal
-        title="Create your Own Dimension"
-        isOpen={isCreateOwnOpen}
-        onClose={() => setIsCreateOwnOpen(false)}
-      >
-        <p className="text-gray-800">
-          Choose 2 words to subtract to create an analysis dimension. It's best
-          if these words are very similar in all ways except one, like
-          "happiness" vs "unhappiness". The results will be words that are
-          different in a similar way to the 2 words you select here.
-        </p>
-        <div className="flex mt-4 justify-between items-center">
-          <div>
-            <div className="text-xs mb-1">Left word</div>
-            <SenseAutosuggest sense={null} onChange={console.log} />
-          </div>
-          <div className="px-3"> &minus; </div>
-          <div>
-            <div className="text-xs mb-1">Right word</div>
-            <SenseAutosuggest sense={null} onChange={console.log} />
-          </div>
-        </div>
-      </Modal>
+      <CustomDimensionModal
+        isOpen={isCustomDimensionModalOpen}
+        onClose={() => setIsCustomDimensionModalOpen(false)}
+      />
     </>
   );
 };

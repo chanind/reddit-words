@@ -14,7 +14,7 @@ const Modal: FC<ModalProps> = ({ isOpen, onClose, children, title }) => (
     onRequestClose={onClose}
     style={{
       overlay: {
-        background: "rgba(0, 0, 0, 0.3)",
+        background: "rgba(0, 0, 0, 0.5)",
       },
       content: {
         top: "50%",
@@ -23,19 +23,22 @@ const Modal: FC<ModalProps> = ({ isOpen, onClose, children, title }) => (
         bottom: "auto",
         marginRight: "-50%",
         transform: "translate(-50%, -50%)",
-        maxWidth: "48rem",
         overflow: "visible",
+        padding: 0,
+        border: "none",
       },
     }}
   >
-    <button
-      onClick={onClose}
-      className="absolute top-0 right-0 text-gray-500 hover:text-gray-900 text-xl px-4 py-2"
-    >
-      &times;
-    </button>
-    <h2 className="text-2xl mb-5">{title}</h2>
-    {children}
+    <div className="bg-gray-800 p-3 rounded border border-gray-500 max-w-full md:max-w-4xl">
+      <button
+        onClick={onClose}
+        className="absolute top-0 right-0 text-gray-500 hover:text-gray-100 text-xl px-4 py-2"
+      >
+        &times;
+      </button>
+      <h2 className="text-2xl mb-5 text-gray-100">{title}</h2>
+      {children}
+    </div>
   </ReactModal>
 );
 
