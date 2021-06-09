@@ -18,8 +18,6 @@ class AutocompleteIndex:
             freq = s2v.get_freq(key)
             cur_freq = words[word]["count"] if word in words else 0
             words[word] = {"count": max(cur_freq, freq), "original_key": raw_word}
-            if "hillary" in word.lower():
-                print("OMG!!", word, words[word])
         self.index = AutoComplete(words=words)
 
     def search(self, term, max_results=10, max_cost=3):
